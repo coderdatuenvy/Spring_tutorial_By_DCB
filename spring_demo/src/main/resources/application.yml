@@ -1,0 +1,41 @@
+server:
+  port: '9090'
+
+spring:
+  profiles:
+    active: QA
+---
+
+spring:
+  profiles: QA
+  h2:
+    console:
+      enabled: 'true'
+  datasource:
+    username: sa
+    url: jdbc:h2:mem:dcbapp
+    driverClassName: org.h2.Driver
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+
+msg:
+  value: <h1>Welcome to Huzefa's the root Directory.. YML version... profile is QA </h1>
+
+---
+
+spring:
+  profiles: PROD
+  h2:
+    console:
+      enabled: 'true'
+  datasource:
+    username: sa
+    url: jdbc:h2:mem:dcbapp
+    driverClassName: org.h2.Driver
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+
+msg:
+  value: <h1>Welcome to Huzefa's the root Directory.. YML version .. profile is prod </h1>
